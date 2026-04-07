@@ -1,0 +1,64 @@
+{
+  "nav": {
+    "home": "Home",
+    "explore": "Explore",
+    "creators": "Creators",
+    "profile": "Profile"
+  },
+  "common": {
+    "signIn": "Sign in",
+    "register": "Register",
+    "upload": "Upload",
+    "notifications": "Notifications",
+    "preview": "Preview",
+    "follow": "Follow",
+    "resetFilters": "Reset filters"
+  },
+  "language": {
+    "select": "Select language"
+  },
+  "home": {
+    "eyebrow": "Home",
+    "title": "Your cinematic home base",
+    "subtitle": "Latest from creators you follow, progress on what you started, and a calm place to keep up.",
+    "forYou": "For you",
+    "newest": "Newest",
+    "unwatched": "Unwatched",
+    "startHere": "Start here",
+    "buildTitle": "Build a feed that feels like yours",
+    "buildDescription": "Follow a few creators or pick a favorite genre to turn Home into a personal catch-up space instead of a blank dashboard.",
+    "suggestedCreators": "Suggested Creators",
+    "continueWatching": "Continue Watching",
+    "newFromFollowed": "New From Creators You Follow",
+    "missedThisWeek": "Missed This Week"
+  },
+  "explore": {
+    "eyebrow": "Explore",
+    "title": "Discover videos beyond your current circle",
+    "subtitle": "Trending stories, fresh uploads, and under-the-radar finds curated to feel expansive without becoming chaotic."
+  },
+  "creators": {
+    "eyebrow": "Creators",
+    "title": "Find voices worth following",
+    "subtitle": "Explore creators by identity, style, and discipline."
+  },
+  "dropdown": {
+    "content": "Content",
+    "yourChannel": "Your channel",
+    "yourVideos": "Your videos",
+    "playlists": "Playlists",
+    "creator": "Creator",
+    "uploadVideo": "Upload video",
+    "switchToViewer": "Switch to viewer mode",
+    "switchToCreator": "Switch to creator mode",
+    "enableCreatorTools": "Enable creator tools",
+    "creatorDashboard": "Creator dashboard",
+    "account": "Account",
+    "profileSettings": "Profile & settings",
+    "planBilling": "Plan & billing",
+    "signOut": "Sign out",
+    "viewerMode": "Viewer mode",
+    "creatorMode": "Creator mode",
+    "plan": "plan"
+  }
+}

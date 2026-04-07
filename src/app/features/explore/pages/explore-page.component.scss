@@ -1,0 +1,130 @@
+:host {
+  display: block;
+}
+
+.explore-page {
+  min-block-size: 100vh;
+  padding: calc(var(--top-nav-height) + 2rem) 2rem 3rem;
+  margin-inline-start: var(--sidebar-width);
+  transition: margin-inline-start 240ms ease;
+}
+
+.explore-page--collapsed {
+  margin-inline-start: var(--sidebar-collapsed-width);
+}
+
+.explore-page--mobile {
+  margin-inline-start: 0;
+  padding-inline: 1rem;
+  padding-block-end: 6rem;
+}
+
+.explore-page__header {
+  margin-bottom: 2rem;
+  display: grid;
+  gap: 1rem;
+}
+
+.explore-page__eyebrow,
+.explore-page__subtitle {
+  margin: 0;
+}
+
+.explore-page__eyebrow {
+  color: var(--color-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+}
+
+.explore-page__title {
+  margin: 0.35rem 0 0.65rem;
+  font-size: clamp(2.2rem, 5vw, 3.5rem);
+}
+
+.explore-page__subtitle,
+.explore-page__hero-copy p:last-child {
+  color: var(--color-on-surface-variant);
+  line-height: 1.7;
+}
+
+.explore-page__chip-row {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.explore-page__chip {
+  min-block-size: 2.5rem;
+  padding-inline: 0.9rem;
+  border-radius: var(--radius-pill);
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--color-on-surface-variant);
+  font-weight: 700;
+}
+
+.explore-page__chip--active {
+  background: rgba(255, 74, 141, 0.14);
+  color: var(--color-primary);
+}
+
+.explore-page__hero {
+  margin-bottom: 3rem;
+  display: grid;
+  grid-template-columns: minmax(20rem, 25rem) minmax(0, 1fr);
+  gap: 1.5rem;
+  align-items: stretch;
+}
+
+.explore-page__hero-copy {
+  padding: 1.5rem;
+  display: grid;
+  align-content: end;
+  gap: 0.85rem;
+}
+
+.explore-page__hero-copy p,
+.explore-page__hero-copy h2 {
+  margin: 0;
+}
+
+.explore-page__section {
+  margin-bottom: 3rem;
+}
+
+.explore-page__video-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1.25rem;
+}
+
+.explore-page__video-grid--two {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.explore-page__short-grid {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+@media (max-width: 1199px) {
+  .explore-page__hero,
+  .explore-page__video-grid,
+  .explore-page__video-grid--two,
+  .explore-page__short-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 767px) {
+  .explore-page {
+    margin-inline-start: 0;
+  }
+
+  .explore-page__hero,
+  .explore-page__video-grid,
+  .explore-page__video-grid--two,
+  .explore-page__short-grid {
+    grid-template-columns: 1fr;
+  }
+}

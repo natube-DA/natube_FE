@@ -1,0 +1,30 @@
+<article class="featured-card surface-card">
+  <img
+    class="featured-card__image"
+    [src]="item.thumbnailUrl"
+    [alt]="item.title"
+    loading="lazy"
+    decoding="async"
+    referrerpolicy="no-referrer"
+  />
+
+  <div class="featured-card__overlay">
+    <div class="featured-card__meta">
+      <span class="badge">{{ item.badge || item.category }}</span>
+      <span class="meta">{{ item.duration }}</span>
+    </div>
+
+    <h4 class="card-title featured-card__title">{{ item.title }}</h4>
+
+    <div class="featured-card__creator">
+      <img
+        [src]="item.creator.avatarUrl"
+        [alt]="item.creator.name"
+        loading="lazy"
+        decoding="async"
+        referrerpolicy="no-referrer"
+      />
+      <span class="nav-label">{{ item.creator.name }}</span>
+    </div>
+  </div>
+</article>

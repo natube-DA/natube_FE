@@ -1,0 +1,102 @@
+<app-top-navbar></app-top-navbar>
+<app-side-nav></app-side-nav>
+
+<main class="home-page" [class.home-page--collapsed]="layout.sidebarCollapsed()" [class.home-page--mobile]="layout.isMobile()">
+  <header class="home-page__header">
+    <div class="home-page__heading">
+      <p class="home-page__eyebrow text-label">{{ 'home.eyebrow' | translate }}</p>
+      <h1 class="page-title home-page__title">{{ 'home.title' | translate }}</h1>
+      <p class="home-page__subtitle">{{ 'home.subtitle' | translate }}</p>
+    </div>
+
+    <div class="home-page__sorts" role="tablist" aria-label="Home feed filters">
+      @for (option of sortOptions; track option.value) {
+        <button
+          type="button"
+          role="tab"
+          class="home-page__tab"
+          [class.home-page__tab--active]="selectedSort() === option.value"
+          [attr.aria-selected]="selectedSort() === option.value"
+          (click)="setSort(option.value)">
+          <span>{{ option.label | translate }}</span>
+          @if (option.badge) {
+            <span class="home-page__tab-badge">{{ option.badge }}</span>
+          }
+        </button>
+      }
+    </div>
+  </header>
+
+  @if (!auth.isAuthenticated()) {
+    <section class="home-page__guest surface-card">
+      <div class="home-page__guest-copy">
+        <p class="home-page__eyebrow text-label">{{ 'home.startHere' | translate }}</p>
+        <h2 class="card-title">{{ 'home.buildTitle' | translate }}</h2>
+        <p>{{ 'home.buildDescription' | translate }}</p>
+
+        <div class="home-page__genre-row">
+          @for (genre of starterGenres; track genre) {
+            <span class="home-page__genre-pill">{{ genre }}</span>
+          }
+        </div>
+      </div>
+
+      <div class="home-page__guest-feature">
+        <app-featured-video-card [item]="content.featuredVideo()"></app-featured-video-card>
+      </div>
+    </section>
+
+    <section class="home-page__section">
+      <app-section-header [title]="'home.suggestedCreators' | translate" accent="primary"></app-section-header>
+      <div class="home-page__creator-grid">
+        @for (creator of suggestedCreators(); track creator.id) {
+          <article class="home-page__creator-card surface-card">
+            <img [src]="creator.avatarUrl" [alt]="creator.name" />
+            <div>
+              <p class="card-title">{{ creator.name }}</p>
+              <p>{{ creator.tagline }}</p>
+            </div>
+          </article>
+        }
+      </div>
+    </section>
+  } @else {
+    <section class="home-page__section">
+      <app-section-header [title]="'home.continueWatching' | translate" accent="tertiary"></app-section-header>
+      <div class="home-page__video-grid home-page__video-grid--three">
+        @for (item of continueWatching(); track item.id) {
+          <app-video-card [item]="item"></app-video-card>
+        }
+      </div>
+    </section>
+
+    <section class="home-page__section">
+      <app-section-header [title]="'home.newFromFollowed' | translate" accent="primary"></app-section-header>
+      <div class="home-page__feed">
+        <div class="home-page__hero-slot">
+          <app-featured-video-card [item]="content.featuredVideo()"></app-featured-video-card>
+        </div>
+
+        @for (item of followedCreatorsFeed(); track item.id) {
+          <app-video-card [item]="item"></app-video-card>
+        }
+      </div>
+    </section>
+
+    <section class="home-page__section">
+      <app-section-header [title]="'home.missedThisWeek' | translate" accent="secondary"></app-section-header>
+      <div class="home-page__digest">
+        @for (lesson of missedThisWeek(); track lesson.id) {
+          <article class="home-page__digest-card surface-card">
+            <p class="text-label">{{ lesson.creator.name }}</p>
+            <h3 class="card-title">{{ lesson.title }}</h3>
+            <p>{{ lesson.description }}</p>
+          </article>
+        }
+      </div>
+    </section>
+  }
+</main>
+
+<app-floating-action-button></app-floating-action-button>
+<app-mobile-nav></app-mobile-nav>

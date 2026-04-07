@@ -1,0 +1,28 @@
+:host {
+  display: block;
+  min-block-size: 100vh;
+  padding: calc(var(--top-nav-height) + 2rem) 2rem 2rem;
+}
+
+.upload-page {
+  max-inline-size: 52rem;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.upload-page h1,
+.upload-page p,
+.upload-page ul {
+  margin: 0 0 1rem;
+}
+
+.upload-page p,
+.upload-page li {
+  color: rgba(229, 188, 197, 0.82);
+  line-height: 1.6;
+}
+
+.upload-page a {
+  color: var(--color-tertiary);
+  font-weight: 700;
+}

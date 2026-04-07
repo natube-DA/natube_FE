@@ -1,0 +1,121 @@
+:host {
+  display: block;
+}
+
+.side-nav {
+  position: fixed;
+  inset-inline-start: 0;
+  inset-block-start: 0;
+  z-index: 40;
+  inline-size: var(--sidebar-width);
+  block-size: 100vh;
+  padding: calc(var(--top-nav-height) + 1rem) 1rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  background: var(--color-surface-container-low);
+  border-inline-end: 1px solid rgba(172, 135, 143, 0.12);
+  transition: inline-size 240ms ease;
+}
+
+.side-nav--collapsed {
+  inline-size: var(--sidebar-collapsed-width);
+}
+
+.side-nav--collapsed .side-nav__title,
+.side-nav--collapsed .side-nav__subtitle,
+.side-nav--collapsed .nav-label,
+.side-nav--collapsed .side-nav__promo {
+  display: none;
+}
+
+.side-nav__header {
+  padding-inline: 0.5rem;
+}
+
+.side-nav__title {
+  margin: 0;
+  color: var(--color-primary);
+  font: 800 1.15rem/1.2 'Plus Jakarta Sans', sans-serif;
+  letter-spacing: -0.03em;
+}
+
+.side-nav__subtitle {
+  margin: 0.35rem 0 0;
+  color: rgba(229, 188, 197, 0.75);
+  font: 600 0.7rem/1.2 'Inter', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+}
+
+.side-nav__menu {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.side-nav__item {
+  min-block-size: 3rem;
+  padding-inline: 1rem;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  color: rgba(229, 226, 225, 0.82);
+  transition: background-color 180ms ease, color 180ms ease;
+}
+
+.side-nav__item:hover {
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--color-secondary);
+}
+
+.side-nav__item--active {
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--color-primary);
+  border-inline-start: 4px solid var(--color-primary-container);
+}
+
+.side-nav--collapsed .side-nav__item {
+  justify-content: center;
+  padding-inline: 0;
+}
+
+.side-nav__promo {
+  margin-top: auto;
+  padding: 1rem;
+}
+
+.side-nav__promo-label {
+  margin: 0 0 0.75rem;
+  color: rgba(229, 188, 197, 0.75);
+  font: 700 0.7rem/1 'Inter', sans-serif;
+  letter-spacing: 0.12em;
+}
+
+.side-nav__progress {
+  inline-size: 100%;
+  block-size: 0.35rem;
+  background: var(--color-surface-container-highest);
+  border-radius: var(--radius-pill);
+  overflow: hidden;
+  margin-bottom: 0.85rem;
+}
+
+.side-nav__progress-fill {
+  display: block;
+  inline-size: 66%;
+  block-size: 100%;
+  background: var(--color-tertiary);
+}
+
+.side-nav__promo-action {
+  padding: 0;
+  color: var(--color-tertiary);
+  font: 700 0.8rem/1 'Inter', sans-serif;
+}
+
+@media (max-width: 767px) {
+  .side-nav {
+    display: none;
+  }
+}

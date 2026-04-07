@@ -1,0 +1,23 @@
+<article class="video-card surface-card">
+  <img
+    class="video-card__image"
+    [src]="item.thumbnailUrl"
+    [alt]="item.title"
+    loading="lazy"
+    decoding="async"
+    referrerpolicy="no-referrer"
+  />
+
+  <div class="video-card__overlay">
+    <img
+      class="video-card__avatar"
+      [src]="item.creator.avatarUrl"
+      [alt]="item.creator.name"
+      loading="lazy"
+      decoding="async"
+      referrerpolicy="no-referrer"
+    />
+    <p class="nav-label video-card__creator">{{ item.creator.name }}</p>
+    <span class="text-label video-card__category">{{ item.category }}</span>
+  </div>
+</article>

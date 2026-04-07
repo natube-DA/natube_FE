@@ -1,0 +1,77 @@
+<app-top-navbar></app-top-navbar>
+<app-side-nav></app-side-nav>
+
+<main class="explore-page" [class.explore-page--collapsed]="layout.sidebarCollapsed()" [class.explore-page--mobile]="layout.isMobile()">
+  <header class="explore-page__header">
+    <div>
+      <p class="explore-page__eyebrow text-label">Explore</p>
+      <h1 class="page-title explore-page__title">Discover videos beyond your current circle</h1>
+      <p class="explore-page__subtitle">
+        Trending stories, fresh uploads, and under-the-radar finds curated to feel expansive without becoming chaotic.
+      </p>
+    </div>
+
+    <div class="explore-page__chip-row">
+      @for (genre of genres; track genre) {
+        <button
+          type="button"
+          class="explore-page__chip"
+          [class.explore-page__chip--active]="selectedGenre() === genre"
+          (click)="setGenre(genre)">
+          {{ genre }}
+        </button>
+      }
+    </div>
+  </header>
+
+  <section class="explore-page__hero">
+    <div class="explore-page__hero-copy surface-card">
+      <p class="text-label">Discovery mode</p>
+      <h2 class="card-title">A structured mix of relevance, freshness, and cinematic serendipity</h2>
+      <p>
+        Explore is for videos from creators you do not already follow, organized into clear buckets so discovery feels intentional.
+      </p>
+    </div>
+
+    <app-featured-video-card [item]="trending()[0] || content.featuredVideo()"></app-featured-video-card>
+  </section>
+
+  <section class="explore-page__section">
+    <app-section-header title="Trending Now" accent="tertiary"></app-section-header>
+    <div class="explore-page__video-grid">
+      @for (item of trending(); track item.id) {
+        <app-video-card [item]="item"></app-video-card>
+      }
+    </div>
+  </section>
+
+  <section class="explore-page__section">
+    <app-section-header title="Fresh Uploads" accent="primary"></app-section-header>
+    <div class="explore-page__video-grid">
+      @for (item of freshUploads(); track item.id) {
+        <app-video-card [item]="item"></app-video-card>
+      }
+    </div>
+  </section>
+
+  <section class="explore-page__section">
+    <app-section-header title="Hidden Gems" accent="secondary"></app-section-header>
+    <div class="explore-page__video-grid explore-page__video-grid--two">
+      @for (item of hiddenGems(); track item.id) {
+        <app-video-card [item]="item"></app-video-card>
+      }
+    </div>
+  </section>
+
+  <section class="explore-page__section">
+    <app-section-header title="Short Discoveries" accent="tertiary"></app-section-header>
+    <div class="explore-page__short-grid">
+      @for (item of shortDiscoveries(); track item.id) {
+        <app-short-card [item]="item"></app-short-card>
+      }
+    </div>
+  </section>
+</main>
+
+<app-floating-action-button></app-floating-action-button>
+<app-mobile-nav></app-mobile-nav>

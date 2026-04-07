@@ -1,0 +1,48 @@
+<section class="user-dropdown surface-card" aria-label="User menu">
+  @if (auth.user(); as user) {
+    <header class="user-dropdown__header">
+      <img [src]="user.avatarUrl" [alt]="user.displayName + ' avatar'" />
+
+      <div>
+        <p class="user-dropdown__name">{{ user.displayName }}</p>
+        <p class="user-dropdown__meta">{{ user.email }}</p>
+        <p class="user-dropdown__meta">
+          {{ user.plan }} {{ 'dropdown.plan' | translate }} ·
+          {{ auth.role() === 'creator' ? ('dropdown.creatorMode' | translate) : ('dropdown.viewerMode' | translate) }}
+        </p>
+      </div>
+    </header>
+
+    <div class="user-dropdown__section">
+      <p class="user-dropdown__label text-label">{{ 'dropdown.content' | translate }}</p>
+      <a routerLink="/profile" (click)="onNavigate()">{{ 'dropdown.yourChannel' | translate }}</a>
+      <a routerLink="/profile" (click)="onNavigate()">{{ 'dropdown.yourVideos' | translate }}</a>
+      <a routerLink="/profile" (click)="onNavigate()">{{ 'dropdown.playlists' | translate }}</a>
+    </div>
+
+    <div class="user-dropdown__section">
+      <p class="user-dropdown__label text-label">{{ 'dropdown.creator' | translate }}</p>
+      <button type="button" (click)="upload.emit()">{{ 'dropdown.uploadVideo' | translate }}</button>
+      <button type="button" (click)="toggleCreatorMode.emit()">
+        {{
+          auth.isCreator()
+            ? (auth.role() === 'creator'
+              ? ('dropdown.switchToViewer' | translate)
+              : ('dropdown.switchToCreator' | translate))
+            : ('dropdown.enableCreatorTools' | translate)
+        }}
+      </button>
+      <a routerLink="/creator" (click)="onNavigate()">{{ 'dropdown.creatorDashboard' | translate }}</a>
+    </div>
+
+    <div class="user-dropdown__section">
+      <p class="user-dropdown__label text-label">{{ 'dropdown.account' | translate }}</p>
+      <app-language-switcher [compact]="true"></app-language-switcher>
+      <a routerLink="/profile" (click)="onNavigate()">{{ 'dropdown.profileSettings' | translate }}</a>
+      <a routerLink="/profile" (click)="onNavigate()">{{ 'dropdown.planBilling' | translate }}</a>
+      <button type="button" class="user-dropdown__danger" (click)="logoutUser.emit()">
+        {{ 'dropdown.signOut' | translate }}
+      </button>
+    </div>
+  }
+</section>

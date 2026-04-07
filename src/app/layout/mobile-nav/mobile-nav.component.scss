@@ -1,0 +1,39 @@
+:host {
+  display: block;
+}
+
+.mobile-nav {
+  position: fixed;
+  inset-inline: 0;
+  inset-block-end: 0;
+  z-index: 50;
+  display: none;
+  grid-template-columns: repeat(4, 1fr);
+  align-items: center;
+  min-block-size: 4rem;
+  padding-inline: 0.5rem;
+  background: var(--color-surface-container-low);
+  border-block-start: 1px solid rgba(172, 135, 143, 0.12);
+}
+
+.mobile-nav__item {
+  display: grid;
+  justify-items: center;
+  gap: 0.15rem;
+  color: rgba(229, 226, 225, 0.7);
+  padding-block: 0.35rem;
+}
+
+.mobile-nav__item--active {
+  color: var(--color-primary);
+}
+
+.mobile-nav__item .text-label {
+  font-size: 0.65rem;
+}
+
+@media (max-width: 767px) {
+  .mobile-nav {
+    display: grid;
+  }
+}

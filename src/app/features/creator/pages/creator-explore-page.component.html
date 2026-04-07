@@ -1,0 +1,84 @@
+<app-top-navbar></app-top-navbar>
+<app-side-nav></app-side-nav>
+
+<main
+  class="creator-page"
+  [class.creator-page--collapsed]="layout.sidebarCollapsed()"
+  [class.creator-page--mobile]="layout.isMobile()">
+  <header class="creator-page__header">
+    <div>
+      <p class="creator-page__eyebrow text-label">Creators</p>
+      <h1 class="page-title creator-page__title">Find voices worth following</h1>
+      <p class="creator-page__subtitle">
+        Explore creators by identity, style, and discipline. This is where you evaluate people to follow,
+        not just isolated videos to watch.
+      </p>
+    </div>
+
+    <div class="creator-page__chips">
+      @for (category of categories; track category) {
+        <button
+          type="button"
+          class="creator-page__chip"
+          [class.creator-page__chip--active]="selectedCategory() === category"
+          (click)="setCategory(category)">
+          {{ category }}
+        </button>
+      }
+    </div>
+  </header>
+
+  <section class="creator-page__hero surface-card">
+    <div>
+      <p class="text-label">Creator-first discovery</p>
+      <h2 class="card-title">Preview the craft, understand the voice, then decide who deserves a follow</h2>
+      <p>
+        Each card highlights the creator’s style, category, recent activity, and sample work so discovery feels relational instead of random.
+      </p>
+    </div>
+  </section>
+
+  @if (featuredCreators().length > 0 && selectedCategory() === 'All') {
+    <section class="creator-page__section">
+      <app-section-header title="Featured Creators" accent="primary"></app-section-header>
+      <div class="creator-page__grid creator-page__grid--featured">
+        @for (creator of featuredCreators(); track creator.id) {
+          <app-creator-card [item]="creator"></app-creator-card>
+        }
+      </div>
+    </section>
+  }
+
+  @if (risingCreators().length > 0 && selectedCategory() === 'All') {
+    <section class="creator-page__section">
+      <app-section-header title="Rising Creators" accent="secondary"></app-section-header>
+      <div class="creator-page__grid">
+        @for (creator of risingCreators(); track creator.id) {
+          <app-creator-card [item]="creator"></app-creator-card>
+        }
+      </div>
+    </section>
+  }
+
+  <section class="creator-page__section">
+    <app-section-header title="Browse By Craft" accent="tertiary"></app-section-header>
+
+    @if (filteredCreators().length > 0) {
+      <div class="creator-page__grid">
+        @for (creator of filteredCreators(); track creator.id) {
+          <app-creator-card [item]="creator"></app-creator-card>
+        }
+      </div>
+    } @else {
+      <section class="creator-page__empty surface-card">
+        <span class="material-symbols-outlined">groups</span>
+        <h2 class="card-title">No creators in this category yet</h2>
+        <p>Try another creative discipline to keep discovering new voices.</p>
+        <button type="button" class="creator-page__reset" (click)="setCategory('All')">Reset filters</button>
+      </section>
+    }
+  </section>
+</main>
+
+<app-floating-action-button></app-floating-action-button>
+<app-mobile-nav></app-mobile-nav>

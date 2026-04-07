@@ -1,0 +1,13 @@
+<nav class="mobile-nav" aria-label="Mobile navigation">
+  @for (item of navItems; track item.route) {
+    <a
+      class="mobile-nav__item"
+      [routerLink]="item.route"
+      routerLinkActive="mobile-nav__item--active"
+      [routerLinkActiveOptions]="{ exact: item.route !== '/creator' }"
+    >
+      <span class="material-symbols-outlined">{{ item.icon }}</span>
+      <span class="text-label">{{ item.label }}</span>
+    </a>
+  }
+</nav>

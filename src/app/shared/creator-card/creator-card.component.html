@@ -1,0 +1,45 @@
+<article class="creator-card surface-card">
+  <div class="creator-card__top">
+    <img
+      class="creator-card__avatar"
+      [src]="item.avatarUrl"
+      [alt]="item.name"
+      loading="lazy"
+      decoding="async"
+      referrerpolicy="no-referrer" />
+
+    <div>
+      <div class="creator-card__meta">
+        <p class="card-title creator-card__name">{{ item.name }}</p>
+        @if (item.statusLabel) {
+          <span class="creator-card__status">{{ item.statusLabel }}</span>
+        }
+      </div>
+      <p class="creator-card__specialty">{{ item.specialty }} · {{ item.category }}</p>
+      <p class="creator-card__followers">{{ item.followersLabel }}</p>
+    </div>
+  </div>
+
+  <p class="creator-card__tagline">{{ item.tagline }}</p>
+  <p class="creator-card__bio">{{ item.bio }}</p>
+
+  <div class="creator-card__preview-grid">
+    @for (thumbnail of item.sampleThumbnails; track thumbnail) {
+      <img
+        [src]="thumbnail"
+        [alt]="item.name + ' preview'"
+        loading="lazy"
+        decoding="async"
+        referrerpolicy="no-referrer" />
+    }
+  </div>
+
+  <div class="creator-card__footer">
+    <p class="creator-card__highlight">{{ item.recentHighlight }}</p>
+
+    <div class="creator-card__actions">
+      <button type="button" class="creator-card__follow">Follow</button>
+      <button type="button" class="creator-card__ghost">Preview</button>
+    </div>
+  </div>
+</article>

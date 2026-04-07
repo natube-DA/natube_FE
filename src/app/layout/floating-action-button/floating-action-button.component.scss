@@ -1,0 +1,30 @@
+:host {
+  display: block;
+}
+
+.floating-action-button {
+  position: fixed;
+  inset-inline-end: 2rem;
+  inset-block-end: 2rem;
+  z-index: 45;
+  inline-size: 3.5rem;
+  block-size: 3.5rem;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: var(--color-primary-container);
+  color: var(--color-on-primary-container);
+  box-shadow: var(--shadow-fab);
+  transition: transform 180ms ease;
+}
+
+.floating-action-button:hover {
+  transform: scale(1.06);
+}
+
+@media (max-width: 767px) {
+  .floating-action-button {
+    inset-inline-end: 1rem;
+    inset-block-end: 5rem;
+  }
+}

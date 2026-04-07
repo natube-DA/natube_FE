@@ -1,0 +1,109 @@
+@if (modal.state().isOpen) {
+  <div class="auth-modal-backdrop" (click)="close()"></div>
+
+  <section
+    class="auth-modal surface-card"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="auth-modal-title"
+    aria-describedby="auth-modal-description">
+    <button type="button" class="auth-modal__close icon-button" aria-label="Close auth modal" (click)="close()">
+      <span class="material-symbols-outlined">close</span>
+    </button>
+
+    <p class="auth-modal__eyebrow text-label">Account access</p>
+    <h2 id="auth-modal-title" class="page-title auth-modal__title">{{ modal.state().title }}</h2>
+    <p id="auth-modal-description" class="auth-modal__description">{{ modal.state().description }}</p>
+
+    <div class="auth-modal__tabs" aria-label="Authentication mode">
+      <button
+        type="button"
+        class="auth-modal__tab"
+        [class.auth-modal__tab--active]="modal.state().mode === 'signin'"
+        (click)="switchMode('signin')">
+        Sign in
+      </button>
+      <button
+        type="button"
+        class="auth-modal__tab"
+        [class.auth-modal__tab--active]="modal.state().mode === 'signup'"
+        (click)="switchMode('signup')">
+        Register
+      </button>
+    </div>
+
+    <div class="auth-modal__socials">
+      <button type="button" class="auth-modal__social-button" (click)="continueWithGoogle()">
+        <span class="material-symbols-outlined" aria-hidden="true">public</span>
+        Continue with Google
+      </button>
+
+      <button type="button" class="auth-modal__social-button" (click)="continueWithApple()">
+        <span class="material-symbols-outlined" aria-hidden="true">phone_iphone</span>
+        Continue with Apple
+      </button>
+    </div>
+
+    <div class="auth-modal__divider" aria-hidden="true">
+      <span>or use email</span>
+    </div>
+
+    @if (modal.state().mode === 'signin') {
+      <form class="auth-form" [formGroup]="signInForm" (ngSubmit)="signIn()">
+        <label class="auth-form__field">
+          <span class="text-label">Email</span>
+          <input type="email" formControlName="email" placeholder="name@example.com" />
+          @if (signInForm.controls.email.invalid && signInForm.controls.email.touched) {
+            <small>Enter a valid email address.</small>
+          }
+        </label>
+
+        <label class="auth-form__field">
+          <span class="text-label">Password</span>
+          <input type="password" formControlName="password" placeholder="Your password" />
+          @if (signInForm.controls.password.invalid && signInForm.controls.password.touched) {
+            <small>Password is required.</small>
+          }
+        </label>
+
+        <button type="submit" class="auth-form__submit" [disabled]="isSubmitting()">
+          {{ isSubmitting() ? 'Signing in...' : 'Sign in' }}
+        </button>
+      </form>
+    } @else {
+      <form class="auth-form" [formGroup]="signUpForm" (ngSubmit)="signUp()">
+        <label class="auth-form__field">
+          <span class="text-label">Display name</span>
+          <input type="text" formControlName="displayName" placeholder="How people will know you" />
+          @if (signUpForm.controls.displayName.invalid && signUpForm.controls.displayName.touched) {
+            <small>Add at least 2 characters.</small>
+          }
+        </label>
+
+        <label class="auth-form__field">
+          <span class="text-label">Email</span>
+          <input type="email" formControlName="email" placeholder="name@example.com" />
+          @if (signUpForm.controls.email.invalid && signUpForm.controls.email.touched) {
+            <small>Enter a valid email address.</small>
+          }
+        </label>
+
+        <label class="auth-form__field">
+          <span class="text-label">Password</span>
+          <input type="password" formControlName="password" placeholder="At least 8 characters" />
+          @if (signUpForm.controls.password.invalid && signUpForm.controls.password.touched) {
+            <small>Use at least 8 characters.</small>
+          }
+        </label>
+
+        <button type="submit" class="auth-form__submit" [disabled]="isSubmitting()">
+          {{ isSubmitting() ? 'Creating account...' : 'Create account' }}
+        </button>
+      </form>
+    }
+
+    @if (feedback(); as message) {
+      <p class="auth-modal__feedback" aria-live="polite">{{ message }}</p>
+    }
+  </section>
+}

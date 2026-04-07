@@ -1,0 +1,14 @@
+<article class="short-card surface-card">
+  <img
+    [src]="item.thumbnailUrl"
+    [alt]="item.title"
+    loading="lazy"
+    decoding="async"
+    referrerpolicy="no-referrer"
+  />
+
+  <div class="short-card__overlay">
+    <p class="text-label short-card__category">{{ item.category }}</p>
+    <h4 class="card-title short-card__title">{{ item.title }}</h4>
+  </div>
+</article>

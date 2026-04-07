@@ -1,0 +1,42 @@
+:host {
+  display: block;
+  margin-bottom: 2rem;
+}
+
+.section-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.section-header__bar {
+  inline-size: 3rem;
+  block-size: 0.5rem;
+  border-radius: var(--radius-pill);
+  background: var(--color-tertiary);
+}
+
+.section-header__bar--primary {
+  background: var(--color-primary-container);
+}
+
+.section-header__bar--secondary {
+  background: var(--color-secondary);
+}
+
+.section-title {
+  margin: 0;
+  color: var(--color-tertiary);
+  font-size: 1.2rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.section-header__bar--primary + .section-title {
+  color: var(--color-primary-container);
+}
+
+.section-header__bar--secondary + .section-title {
+  color: var(--color-secondary);
+}

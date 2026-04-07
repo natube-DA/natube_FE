@@ -1,0 +1,64 @@
+{
+  "nav": {
+    "home": "Accueil",
+    "explore": "Explorer",
+    "creators": "Créateurs",
+    "profile": "Profil"
+  },
+  "common": {
+    "signIn": "Se connecter",
+    "register": "S’inscrire",
+    "upload": "Publier",
+    "notifications": "Notifications",
+    "preview": "Aperçu",
+    "follow": "Suivre",
+    "resetFilters": "Réinitialiser les filtres"
+  },
+  "language": {
+    "select": "Choisir la langue"
+  },
+  "home": {
+    "eyebrow": "Accueil",
+    "title": "Votre base cinématographique",
+    "subtitle": "Les dernières publications des créateurs que vous suivez, votre progression et un espace calme pour rester à jour.",
+    "forYou": "Pour vous",
+    "newest": "Les plus récents",
+    "unwatched": "Non vus",
+    "startHere": "Commencez ici",
+    "buildTitle": "Créez un flux qui vous ressemble",
+    "buildDescription": "Suivez quelques créateurs ou choisissez un genre favori pour transformer Accueil en espace personnel.",
+    "suggestedCreators": "Créateurs suggérés",
+    "continueWatching": "Continuer à regarder",
+    "newFromFollowed": "Nouveau des créateurs suivis",
+    "missedThisWeek": "À ne pas manquer cette semaine"
+  },
+  "explore": {
+    "eyebrow": "Explorer",
+    "title": "Découvrez des vidéos au-delà de votre cercle actuel",
+    "subtitle": "Tendances, nouveautés et pépites cachées organisées pour une découverte claire."
+  },
+  "creators": {
+    "eyebrow": "Créateurs",
+    "title": "Trouvez des voix à suivre",
+    "subtitle": "Découvrez des créateurs par identité, style et discipline."
+  },
+  "dropdown": {
+    "content": "Contenu",
+    "yourChannel": "Votre chaîne",
+    "yourVideos": "Vos vidéos",
+    "playlists": "Playlists",
+    "creator": "Creator",
+    "uploadVideo": "Publier une vidéo",
+    "switchToViewer": "Passer en mode viewer",
+    "switchToCreator": "Passer en mode creator",
+    "enableCreatorTools": "Activer les outils creator",
+    "creatorDashboard": "Tableau creator",
+    "account": "Compte",
+    "profileSettings": "Profil et réglages",
+    "planBilling": "Offre et facturation",
+    "signOut": "Se déconnecter",
+    "viewerMode": "Mode viewer",
+    "creatorMode": "Mode creator",
+    "plan": "offre"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["src/app/shared/short-card/short-card.component.scss"],
+  "sourcesContent": [":host {\n  display: block;\n}\n\n.short-card {\n  position: relative;\n  overflow: hidden;\n  aspect-ratio: 9 / 16;\n}\n\n.short-card img {\n  inline-size: 100%;\n  block-size: 100%;\n  object-fit: cover;\n  transition: transform 500ms ease;\n}\n\n.short-card:hover img {\n  transform: scale(1.08);\n}\n\n.short-card__overlay {\n  position: absolute;\n  inset: 0;\n  display: flex;\n  flex-direction: column;\n  justify-content: end;\n  gap: 0.25rem;\n  padding: 1rem;\n  background: linear-gradient(180deg, transparent 45%, rgba(0, 0, 0, 0.9) 100%);\n}\n\n.short-card__category {\n  margin: 0;\n  color: var(--color-secondary);\n  font-size: 0.65rem;\n  font-weight: 800;\n  letter-spacing: 0.12em;\n  text-transform: uppercase;\n}\n\n.short-card__title {\n  margin: 0;\n  font-size: 0.95rem;\n  font-weight: 800;\n}\n"],
+  "mappings": ";AAAA;AACE,WAAA;;AAGF,CAAA;AACE,YAAA;AACA,YAAA;AACA,gBAAA,CAAA,CAAA;;AAGF,CANA,WAMA;AACE,eAAA;AACA,cAAA;AACA,cAAA;AACA,cAAA,UAAA,MAAA;;AAGF,CAbA,UAaA,OAAA;AACE,aAAA,MAAA;;AAGF,CAAA;AACE,YAAA;AACA,SAAA;AACA,WAAA;AACA,kBAAA;AACA,mBAAA;AACA,OAAA;AACA,WAAA;AACA;IAAA;MAAA,MAAA;MAAA,YAAA,GAAA;MAAA,KAAA,CAAA,EAAA,CAAA,EAAA,CAAA,EAAA,KAAA;;AAGF,CAAA;AACE,UAAA;AACA,SAAA,IAAA;AACA,aAAA;AACA,eAAA;AACA,kBAAA;AACA,kBAAA;;AAGF,CAAA;AACE,UAAA;AACA,aAAA;AACA,eAAA;;",
+  "names": []
+}

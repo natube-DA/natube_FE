@@ -1,0 +1,36 @@
+<div class="language-switcher" [class.language-switcher--compact]="compact">
+  <button
+    type="button"
+    class="language-switcher__trigger"
+    [attr.aria-expanded]="isOpen()"
+    aria-haspopup="menu"
+    aria-label="Select language"
+    (click)="toggle()">
+    <span class="language-switcher__icon" aria-hidden="true">🌐</span>
+    @if (showLabel) {
+      <span class="language-switcher__label">
+        {{ language.getNativeLanguageName(language.getCurrentLanguage()) }}
+      </span>
+    }
+    <span class="material-symbols-outlined language-switcher__caret" aria-hidden="true">expand_more</span>
+  </button>
+
+  @if (isOpen()) {
+    <section class="language-switcher__menu surface-card" role="menu" aria-label="Language menu">
+      @for (item of language.supportedLanguages; track item.code) {
+        <button
+          type="button"
+          role="menuitemradio"
+          class="language-switcher__option"
+          [class.language-switcher__option--active]="language.getCurrentLanguage() === item.code"
+          [attr.aria-checked]="language.getCurrentLanguage() === item.code"
+          (click)="selectLanguage(item.code)">
+          <span>{{ item.nativeName }}</span>
+          @if (language.getCurrentLanguage() === item.code) {
+            <span class="material-symbols-outlined language-switcher__check" aria-hidden="true">check</span>
+          }
+        </button>
+      }
+    </section>
+  }
+</div>

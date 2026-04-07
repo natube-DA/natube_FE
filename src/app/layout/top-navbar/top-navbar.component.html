@@ -1,0 +1,95 @@
+<nav class="top-navbar">
+  <div class="top-navbar__start">
+    <button
+      type="button"
+      class="icon-button top-navbar__menu"
+      aria-label="Toggle sidebar"
+      (click)="layout.toggleSidebar()"
+    >
+      <span class="material-symbols-outlined">menu</span>
+    </button>
+
+    <a class="brand" routerLink="/home">Cinematic Curator</a>
+  </div>
+
+  <div class="top-navbar__search" role="search">
+    <span class="material-symbols-outlined search-icon">search</span>
+    <label class="visually-hidden" for="creator-search">Search creators and videos</label>
+    <input
+      id="creator-search"
+      type="search"
+      name="creatorSearch"
+      placeholder="Cerca"
+      [value]="search.query()"
+      (input)="onQueryChange($event)"
+      autocomplete="off"
+      spellcheck="false"
+    />
+  </div>
+
+  <div class="top-navbar__actions">
+    @if (auth.isAuthenticated()) {
+      <button type="button" class="top-navbar__upload-button" (click)="handleUpload()">
+        <span class="material-symbols-outlined">video_call</span>
+        Upload
+      </button>
+
+      <div class="top-navbar__overlay-anchor">
+        <button
+          type="button"
+          class="icon-button top-navbar__notification-button"
+          aria-label="Open notifications"
+          [attr.aria-expanded]="notificationsOpen()"
+          (click)="toggleNotifications()">
+          <span class="material-symbols-outlined">notifications</span>
+          @if (auth.user()?.unreadNotifications) {
+            <span class="top-navbar__badge">{{ auth.user()?.unreadNotifications }}</span>
+          }
+        </button>
+
+        @if (notificationsOpen()) {
+          <section class="top-navbar__panel surface-card" aria-label="Notifications">
+            <p class="top-navbar__panel-title text-label">Notifications</p>
+            @for (item of notifications; track item) {
+              <p class="top-navbar__notification-item">{{ item }}</p>
+            }
+          </section>
+        }
+      </div>
+
+      <div class="top-navbar__overlay-anchor">
+        <button
+          type="button"
+          class="avatar"
+          aria-label="Open account menu"
+          [attr.aria-expanded]="userMenuOpen()"
+          (click)="toggleUserMenu()">
+          <img
+            [src]="auth.user()?.avatarUrl"
+            [alt]="(auth.user()?.displayName ?? 'User') + ' profile avatar'"
+            loading="lazy"
+            decoding="async"
+            referrerpolicy="no-referrer" />
+        </button>
+
+        @if (userMenuOpen()) {
+          <div class="top-navbar__panel top-navbar__panel--menu">
+            <app-user-dropdown
+              (upload)="handleUpload()"
+              (toggleCreatorMode)="toggleCreatorMode()"
+              (logoutUser)="logout()"
+              (closeMenu)="closeOverlays()"></app-user-dropdown>
+          </div>
+        }
+      </div>
+    } @else {
+      <app-language-switcher></app-language-switcher>
+      <button type="button" class="top-navbar__text-button" (click)="openSignIn()">
+        {{ 'common.signIn' | translate }}
+      </button>
+      <button type="button" class="top-navbar__register-button" (click)="openSignUp()">
+        {{ 'common.register' | translate }}
+      </button>
+    }
+  </div>
+</nav>

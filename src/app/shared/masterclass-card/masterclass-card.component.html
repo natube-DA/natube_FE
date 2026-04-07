@@ -1,0 +1,33 @@
+<article class="masterclass-card">
+  <div class="masterclass-card__visual surface-card">
+    <img
+      [src]="item.thumbnailUrl"
+      [alt]="item.title"
+      loading="lazy"
+      decoding="async"
+      referrerpolicy="no-referrer"
+    />
+
+    @if (item.label) {
+      <span class="masterclass-card__label">{{ item.label }}</span>
+    }
+  </div>
+
+  <h4 class="card-title masterclass-card__title">{{ item.title }}</h4>
+  <p class="masterclass-card__description">{{ item.description }}</p>
+
+  <div class="masterclass-card__footer">
+    <div class="masterclass-card__creator">
+      <img
+        [src]="item.creator.avatarUrl"
+        [alt]="item.creator.name"
+        loading="lazy"
+        decoding="async"
+        referrerpolicy="no-referrer"
+      />
+      <span class="text-label">{{ item.creator.name }}</span>
+    </div>
+
+    <span class="masterclass-card__lessons">{{ item.lessonsCount }} Lessons</span>
+  </div>
+</article>

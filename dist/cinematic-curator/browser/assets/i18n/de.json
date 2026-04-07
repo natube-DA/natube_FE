@@ -1,0 +1,64 @@
+{
+  "nav": {
+    "home": "Start",
+    "explore": "Entdecken",
+    "creators": "Creator",
+    "profile": "Profil"
+  },
+  "common": {
+    "signIn": "Anmelden",
+    "register": "Registrieren",
+    "upload": "Hochladen",
+    "notifications": "Benachrichtigungen",
+    "preview": "Vorschau",
+    "follow": "Folgen",
+    "resetFilters": "Filter zurücksetzen"
+  },
+  "language": {
+    "select": "Sprache wählen"
+  },
+  "home": {
+    "eyebrow": "Start",
+    "title": "Deine filmische Zentrale",
+    "subtitle": "Neueste Uploads von Creatorn, denen du folgst, dein Fortschritt und ein ruhiger Ort zum Aufholen.",
+    "forYou": "Für dich",
+    "newest": "Neueste",
+    "unwatched": "Ungelesen",
+    "startHere": "Hier beginnen",
+    "buildTitle": "Baue einen Feed, der sich nach dir anfühlt",
+    "buildDescription": "Folge einigen Creatorn oder wähle ein Lieblingsgenre, damit Start persönlich wird statt leer zu wirken.",
+    "suggestedCreators": "Empfohlene Creator",
+    "continueWatching": "Weiter ansehen",
+    "newFromFollowed": "Neu von deinen Creatorn",
+    "missedThisWeek": "Diese Woche verpasst"
+  },
+  "explore": {
+    "eyebrow": "Entdecken",
+    "title": "Entdecke Videos außerhalb deines aktuellen Umfelds",
+    "subtitle": "Trending Stories, frische Uploads und Hidden Gems in einer klar kuratierten Struktur."
+  },
+  "creators": {
+    "eyebrow": "Creator",
+    "title": "Finde Stimmen, denen du folgen möchtest",
+    "subtitle": "Entdecke Creator nach Identität, Stil und Disziplin."
+  },
+  "dropdown": {
+    "content": "Inhalte",
+    "yourChannel": "Dein Kanal",
+    "yourVideos": "Deine Videos",
+    "playlists": "Playlists",
+    "creator": "Creator",
+    "uploadVideo": "Video hochladen",
+    "switchToViewer": "Zum Viewer-Modus wechseln",
+    "switchToCreator": "Zum Creator-Modus wechseln",
+    "enableCreatorTools": "Creator-Tools aktivieren",
+    "creatorDashboard": "Creator-Dashboard",
+    "account": "Konto",
+    "profileSettings": "Profil und Einstellungen",
+    "planBilling": "Plan und Abrechnung",
+    "signOut": "Abmelden",
+    "viewerMode": "Viewer-Modus",
+    "creatorMode": "Creator-Modus",
+    "plan": "Plan"
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "nav": {
+    "home": "Home",
+    "explore": "Esplora",
+    "creators": "Creator",
+    "profile": "Profilo"
+  },
+  "common": {
+    "signIn": "Accedi",
+    "register": "Registrati",
+    "upload": "Carica",
+    "notifications": "Notifiche",
+    "preview": "Anteprima",
+    "follow": "Segui",
+    "resetFilters": "Reimposta filtri"
+  },
+  "language": {
+    "select": "Seleziona lingua"
+  },
+  "home": {
+    "eyebrow": "Home",
+    "title": "La tua base cinematica",
+    "subtitle": "Le ultime uscite dei creator che segui, i contenuti in corso e uno spazio calmo per restare aggiornato.",
+    "forYou": "Per te",
+    "newest": "Più recenti",
+    "unwatched": "Da vedere",
+    "startHere": "Inizia da qui",
+    "buildTitle": "Costruisci un feed che ti somigli",
+    "buildDescription": "Segui qualche creator o scegli un genere preferito per trasformare Home in uno spazio personale, non in una dashboard vuota.",
+    "suggestedCreators": "Creator suggeriti",
+    "continueWatching": "Continua a guardare",
+    "newFromFollowed": "Nuovi dai creator che segui",
+    "missedThisWeek": "Persi questa settimana"
+  },
+  "explore": {
+    "eyebrow": "Esplora",
+    "title": "Scopri video oltre la tua cerchia attuale",
+    "subtitle": "Storie in tendenza, upload freschi e gemme nascoste curate per risultare ricche ma mai caotiche."
+  },
+  "creators": {
+    "eyebrow": "Creator",
+    "title": "Trova voci da seguire",
+    "subtitle": "Esplora creator per identità, stile e disciplina."
+  },
+  "dropdown": {
+    "content": "Contenuti",
+    "yourChannel": "Il tuo canale",
+    "yourVideos": "I tuoi video",
+    "playlists": "Playlist",
+    "creator": "Creator",
+    "uploadVideo": "Carica video",
+    "switchToViewer": "Passa alla modalità viewer",
+    "switchToCreator": "Passa alla modalità creator",
+    "enableCreatorTools": "Attiva strumenti creator",
+    "creatorDashboard": "Dashboard creator",
+    "account": "Account",
+    "profileSettings": "Profilo e impostazioni",
+    "planBilling": "Piano e fatturazione",
+    "signOut": "Esci",
+    "viewerMode": "Modalità viewer",
+    "creatorMode": "Modalità creator",
+    "plan": "piano"
+  }
+}

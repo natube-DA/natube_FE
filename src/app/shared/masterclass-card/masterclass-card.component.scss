@@ -1,0 +1,77 @@
+:host {
+  display: block;
+}
+
+.masterclass-card {
+  display: grid;
+  gap: 1rem;
+}
+
+.masterclass-card__visual {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 16 / 9;
+}
+
+.masterclass-card__visual img {
+  inline-size: 100%;
+  block-size: 100%;
+  object-fit: cover;
+  transition: transform 500ms ease;
+}
+
+.masterclass-card:hover .masterclass-card__visual img {
+  transform: scale(1.08);
+}
+
+.masterclass-card__label {
+  position: absolute;
+  inset-inline-end: 1rem;
+  inset-block-end: 1rem;
+  min-block-size: 1.8rem;
+  padding-inline: 0.8rem;
+  display: inline-flex;
+  align-items: center;
+  border-radius: var(--radius-pill);
+  background: var(--color-primary);
+  color: var(--color-on-primary-container);
+  font: 800 0.68rem/1 'Inter', sans-serif;
+}
+
+.masterclass-card__title {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 800;
+}
+
+.masterclass-card__description {
+  margin: 0;
+  color: rgba(229, 188, 197, 0.82);
+  line-height: 1.5;
+}
+
+.masterclass-card__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.masterclass-card__creator {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.masterclass-card__creator img {
+  inline-size: 1.5rem;
+  block-size: 1.5rem;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid var(--color-primary);
+}
+
+.masterclass-card__lessons {
+  color: var(--color-primary-container);
+  font: 800 0.75rem/1 'Inter', sans-serif;
+}

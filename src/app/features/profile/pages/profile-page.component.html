@@ -1,0 +1,94 @@
+<app-top-navbar></app-top-navbar>
+<app-side-nav></app-side-nav>
+
+<main
+  class="profile-page"
+  [class.profile-page--collapsed]="layout.sidebarCollapsed()"
+  [class.profile-page--mobile]="layout.isMobile()">
+  @if (!auth.isAuthenticated()) {
+    <section class="profile-page__guest-hero">
+      <div>
+        <p class="profile-page__eyebrow text-label">Account experience</p>
+        <h1 class="page-title profile-page__title">Build your cinematic identity</h1>
+        <p class="profile-page__subtitle">
+          Sign in or create an account to save preferences, follow creators, manage uploads,
+          and switch into creator mode without leaving the feed experience.
+        </p>
+
+        <div class="profile-page__hero-actions">
+          <button type="button" class="profile-page__primary-button" (click)="openSignUp()">Create account</button>
+          <button type="button" class="profile-page__secondary-button" (click)="openSignIn()">Sign in</button>
+        </div>
+      </div>
+
+      <section class="profile-page__benefits surface-card">
+        <p class="text-label">What unlocks with an account</p>
+        <ul>
+          @for (item of accountHighlights; track item) {
+            <li>{{ item }}</li>
+          }
+        </ul>
+      </section>
+    </section>
+  } @else {
+    @if (auth.user(); as user) {
+      <section class="profile-page__overview surface-card">
+        <img class="profile-page__avatar" [src]="user.avatarUrl" [alt]="user.displayName + ' avatar'" />
+
+        <div>
+          <p class="profile-page__eyebrow text-label">Profile</p>
+          <h1 class="page-title profile-page__title">{{ user.displayName }}</h1>
+          <p class="profile-page__subtitle">
+            {{ user.email }} · {{ user.plan }} plan ·
+            {{ auth.role() === 'creator' ? 'Creator mode active' : 'Viewer mode active' }}
+          </p>
+        </div>
+
+        <div class="profile-page__hero-actions">
+          <button type="button" class="profile-page__primary-button" (click)="enableCreatorMode()">
+            {{ auth.isCreator() ? 'Open creator tools' : 'Become a creator' }}
+          </button>
+          <button type="button" class="profile-page__secondary-button" (click)="logout()">Sign out</button>
+        </div>
+      </section>
+
+      <section class="profile-page__grid">
+        <article class="profile-page__card surface-card">
+          <p class="profile-page__card-label text-label">Account</p>
+          <h2 class="card-title">Identity & security</h2>
+          <p>Email sign-in is active and your session stays available across visits on this device.</p>
+          <ul>
+            <li>Primary email: {{ user.email }}</li>
+            <li>Sign-in provider: {{ user.authProvider }}</li>
+            <li>Session status: active</li>
+          </ul>
+        </article>
+
+        <article class="profile-page__card surface-card">
+          <p class="profile-page__card-label text-label">Preferences</p>
+          <h2 class="card-title">Watch experience</h2>
+          <p>Use this area for watch preferences, playback defaults, saved topics, and creator follows.</p>
+          <ul>
+            <li>Recommended for you: enabled</li>
+            <li>Release alerts: {{ user.unreadNotifications > 0 ? 'enabled' : 'quiet mode' }}</li>
+            <li>Playlist sync: available</li>
+          </ul>
+        </article>
+
+        <article class="profile-page__card surface-card">
+          <p class="profile-page__card-label text-label">Creator</p>
+          <h2 class="card-title">Creator mode</h2>
+          <p>Switch into creator workflows to upload content, manage your channel, and review analytics.</p>
+          <ul>
+            <li>Status: {{ auth.isCreator() ? 'creator tools enabled' : 'ready to activate' }}</li>
+            <li>Dashboard route: `/creator`</li>
+            <li>Upload route: `/upload`</li>
+          </ul>
+        </article>
+      </section>
+    }
+  }
+</main>
+
+<app-floating-action-button></app-floating-action-button>
+<app-mobile-nav></app-mobile-nav>

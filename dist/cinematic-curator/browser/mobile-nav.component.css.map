@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["src/app/layout/mobile-nav/mobile-nav.component.scss"],
+  "sourcesContent": [":host {\n  display: block;\n}\n\n.mobile-nav {\n  position: fixed;\n  inset-inline: 0;\n  inset-block-end: 0;\n  z-index: 50;\n  display: none;\n  grid-template-columns: repeat(4, 1fr);\n  align-items: center;\n  min-block-size: 4rem;\n  padding-inline: 0.5rem;\n  background: var(--color-surface-container-low);\n  border-block-start: 1px solid rgba(172, 135, 143, 0.12);\n}\n\n.mobile-nav__item {\n  display: grid;\n  justify-items: center;\n  gap: 0.15rem;\n  color: rgba(229, 226, 225, 0.7);\n  padding-block: 0.35rem;\n}\n\n.mobile-nav__item--active {\n  color: var(--color-primary);\n}\n\n.mobile-nav__item .text-label {\n  font-size: 0.65rem;\n}\n\n@media (max-width: 767px) {\n  .mobile-nav {\n    display: grid;\n  }\n}\n"],
+  "mappings": ";AAAA;AACE,WAAA;;AAGF,CAAA;AACE,YAAA;AACA,gBAAA;AACA,mBAAA;AACA,WAAA;AACA,WAAA;AACA,yBAAA,OAAA,CAAA,EAAA;AACA,eAAA;AACA,kBAAA;AACA,kBAAA;AACA,cAAA,IAAA;AACA,sBAAA,IAAA,MAAA,KAAA,GAAA,EAAA,GAAA,EAAA,GAAA,EAAA;;AAGF,CAAA;AACE,WAAA;AACA,iBAAA;AACA,OAAA;AACA,SAAA,KAAA,GAAA,EAAA,GAAA,EAAA,GAAA,EAAA;AACA,iBAAA;;AAGF,CAAA;AACE,SAAA,IAAA;;AAGF,CAZA,iBAYA,CAAA;AACE,aAAA;;AAGF,OAAA,CAAA,SAAA,EAAA;AACE,GA/BF;AAgCI,aAAA;;;",
+  "names": []
+}

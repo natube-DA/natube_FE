@@ -1,0 +1,137 @@
+/* src/styles.scss */
+:root {
+  --color-tertiary: #4cd6fb;
+  --color-surface-bright: #3a3939;
+  --color-on-secondary-container: #006a5a;
+  --color-on-tertiary: #003642;
+  --color-inverse-surface: #e5e2e1;
+  --color-primary-fixed: #ffd9e1;
+  --color-primary-container: #ff4a8d;
+  --color-surface-container-high: #2a2a2a;
+  --color-on-surface: #e5e2e1;
+  --color-surface: #131313;
+  --color-secondary-fixed-dim: #00dfc1;
+  --color-background: #131313;
+  --color-surface-container: #201f1f;
+  --color-outline: #ac878f;
+  --color-primary: #ffb1c4;
+  --color-on-primary-container: #590028;
+  --color-on-background: #e5e2e1;
+  --color-on-surface-variant: #e5bcc5;
+  --color-surface-container-highest: #353534;
+  --color-secondary-container: #00f2d1;
+  --color-error: #ffb4ab;
+  --color-secondary: #c7fff0;
+  --color-surface-container-low: #1c1b1b;
+  --color-surface-container-lowest: #0e0e0e;
+  --color-outline-variant: #5c3f46;
+  --color-white: #ffffff;
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-pill: 9999px;
+  --sidebar-width: 16rem;
+  --sidebar-collapsed-width: 5rem;
+  --top-nav-height: 4rem;
+  --shadow-card: 0 12px 30px rgba(0, 0, 0, 0.25);
+  --shadow-fab: 0 18px 40px rgba(0, 0, 0, 0.35);
+}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+  background: var(--color-background);
+  color: var(--color-on-surface);
+  font-family: "Manrope", sans-serif;
+}
+body {
+  overflow-x: hidden;
+}
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+button {
+  border: 0;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+img {
+  display: block;
+  max-width: 100%;
+}
+::selection {
+  background: var(--color-primary);
+  color: var(--color-on-primary-container);
+}
+.material-symbols-outlined {
+  font-variation-settings:
+    "FILL" 0,
+    "wght" 400,
+    "GRAD" 0,
+    "opsz" 24;
+}
+.page-title,
+.section-title,
+.card-title,
+.brand,
+.nav-label {
+  font-family: "Plus Jakarta Sans", sans-serif;
+}
+.text-label,
+.badge,
+.meta {
+  font-family: "Inter", sans-serif;
+}
+.surface-card {
+  background: var(--color-surface-container-high);
+  border: 1px solid rgba(172, 135, 143, 0.12);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+}
+.icon-button {
+  inline-size: 2.5rem;
+  block-size: 2.5rem;
+  border-radius: 50%;
+  display: inline-grid;
+  place-items: center;
+  transition: background-color 180ms ease, transform 180ms ease;
+}
+.icon-button:hover {
+  background: rgba(255, 255, 255, 0.06);
+}
+.icon-button:active {
+  transform: scale(0.96);
+}
+.visually-hidden {
+  position: absolute !important;
+  inline-size: 1px;
+  block-size: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+/* angular:styles/global:styles */
+/*# sourceMappingURL=styles.css.map */

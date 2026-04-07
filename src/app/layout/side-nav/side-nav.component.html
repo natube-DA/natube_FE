@@ -1,0 +1,32 @@
+<aside
+  class="side-nav"
+  [class.side-nav--collapsed]="layout.sidebarCollapsed()"
+  [attr.aria-hidden]="layout.isMobile()"
+>
+  <div class="side-nav__header">
+    <h2 class="side-nav__title">Library</h2>
+    <p class="side-nav__subtitle">Your Collection</p>
+  </div>
+
+  <nav class="side-nav__menu" aria-label="Primary navigation">
+    @for (item of navItems; track item.route) {
+      <a
+        class="side-nav__item"
+        [routerLink]="item.route"
+        routerLinkActive="side-nav__item--active"
+        [routerLinkActiveOptions]="{ exact: item.route !== '/creator' }"
+      >
+        <span class="material-symbols-outlined">{{ item.icon }}</span>
+        <span class="nav-label">{{ item.label }}</span>
+      </a>
+    }
+  </nav>
+
+  <div class="side-nav__promo surface-card">
+    <p class="side-nav__promo-label">PRO PLAN</p>
+    <div class="side-nav__progress">
+      <span class="side-nav__progress-fill"></span>
+    </div>
+    <button type="button" class="side-nav__promo-action">Upgrade Now</button>
+  </div>
+</aside>

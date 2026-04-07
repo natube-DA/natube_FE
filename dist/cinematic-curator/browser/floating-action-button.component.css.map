@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["src/app/layout/floating-action-button/floating-action-button.component.scss"],
+  "sourcesContent": [":host {\n  display: block;\n}\n\n.floating-action-button {\n  position: fixed;\n  inset-inline-end: 2rem;\n  inset-block-end: 2rem;\n  z-index: 45;\n  inline-size: 3.5rem;\n  block-size: 3.5rem;\n  border-radius: 50%;\n  display: grid;\n  place-items: center;\n  background: var(--color-primary-container);\n  color: var(--color-on-primary-container);\n  box-shadow: var(--shadow-fab);\n  transition: transform 180ms ease;\n}\n\n.floating-action-button:hover {\n  transform: scale(1.06);\n}\n\n@media (max-width: 767px) {\n  .floating-action-button {\n    inset-inline-end: 1rem;\n    inset-block-end: 5rem;\n  }\n}\n"],
+  "mappings": ";AAAA;AACE,WAAA;;AAGF,CAAA;AACE,YAAA;AACA,oBAAA;AACA,mBAAA;AACA,WAAA;AACA,eAAA;AACA,cAAA;AACA,iBAAA;AACA,WAAA;AACA,eAAA;AACA,cAAA,IAAA;AACA,SAAA,IAAA;AACA,cAAA,IAAA;AACA,cAAA,UAAA,MAAA;;AAGF,CAhBA,sBAgBA;AACE,aAAA,MAAA;;AAGF,OAAA,CAAA,SAAA,EAAA;AACE,GArBF;AAsBI,sBAAA;AACA,qBAAA;;;",
+  "names": []
+}

@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["src/app/features/upload/pages/upload-page.component.scss"],
+  "sourcesContent": [":host {\n  display: block;\n  min-block-size: 100vh;\n  padding: calc(var(--top-nav-height) + 2rem) 2rem 2rem;\n}\n\n.upload-page {\n  max-inline-size: 52rem;\n  margin: 0 auto;\n  padding: 2rem;\n}\n\n.upload-page h1,\n.upload-page p,\n.upload-page ul {\n  margin: 0 0 1rem;\n}\n\n.upload-page p,\n.upload-page li {\n  color: rgba(229, 188, 197, 0.82);\n  line-height: 1.6;\n}\n\n.upload-page a {\n  color: var(--color-tertiary);\n  font-weight: 700;\n}\n"],
+  "mappings": ";AAAA;AACE,WAAA;AACA,kBAAA;AACA,WAAA,KAAA,IAAA,kBAAA,EAAA,MAAA,KAAA;;AAGF,CAAA;AACE,mBAAA;AACA,UAAA,EAAA;AACA,WAAA;;AAGF,CANA,YAMA;AAAA,CANA,YAMA;AAAA,CANA,YAMA;AAGE,UAAA,EAAA,EAAA;;AAGF,CAZA,YAYA;AAAA,CAZA,YAYA;AAEE,SAAA,KAAA,GAAA,EAAA,GAAA,EAAA,GAAA,EAAA;AACA,eAAA;;AAGF,CAlBA,YAkBA;AACE,SAAA,IAAA;AACA,eAAA;;",
+  "names": []
+}
